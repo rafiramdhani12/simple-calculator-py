@@ -5,14 +5,7 @@ def calculator():
         angka1 = int(input("masukan angka pertama : ")) 
         angka2 = int(input("masukan angka kedua : ")) 
     
-        input_data = int(input('''
-                pilih operasi yg mau kamu lakukan             
-                1. tambah
-                2. kurang
-                3. kali
-                4. bagi
-                pilih : [1]/[2]/[3]/[4]
-                '''))
+        input_data = int(input("pilih operasi yg ingin kamu lakukan \n1,tambah  \n2.kurang  \n3.kali \n4.bagi : "))
         
         if input_data == 1:
             tambah = angka1 + angka2
