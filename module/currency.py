@@ -1,94 +1,46 @@
-nilai_tukar = {
-    "rupiah_to_dollar": 0.000065,
-    "rupiah_to_yen": 0.009,
-    "rupiah_to_poundsterling": 0.000054,
-    "rupiah_to_ringgit": 0.00029,
-    "dollar_to_rupiah": 15380,
-    "dollar_to_yen": 145.3,
-    "dollar_to_poundsterling": 0.81,
-    "dollar_to_ringgit": 4.43,
-    "yen_to_rupiah": 147.5,
-    "yen_to_dollar": 0.0069,
-    "yen_to_poundsterling": 0.0056,
-    "yen_to_ringgit": 0.031,
-    "poundsterling_to_rupiah": 18500,
-    "poundsterling_to_dollar": 1.23,
-    "poundsterling_to_yen": 178.5,
-    "poundsterling_to_ringgit": 5.47,
-    "ringgit_to_rupiah": 3483,
-    "ringgit_to_dollar": 0.23,
-    "ringgit_to_yen": 22.33,
-    "ringgit_to_poundsterling": 0.18
-}
+import requests
 
-
-def rupiah(amount):
-    return{
-        "dollar" : amount * nilai_tukar["rupiah_to_dollar"],
-        "yen" : amount * nilai_tukar["rupiah_to_yen"],
-        "poundsterling" : amount * nilai_tukar["rupiah_to_poundsterling"],
-        "ringgit" : amount * nilai_tukar["rupiah_to_ringgit"]
-    }
-
-def dollar(amount):
-    return{
-        "rupiah" : amount * nilai_tukar["dollar_to_rupiah"],
-        "yen": amount* nilai_tukar["dollar_to_yen"],
-        "poundsterling": amount * nilai_tukar["dollar_to_poundsterling"],
-        "ringgit" : amount * nilai_tukar["dollar_to_ringgit"]
-    }
-
-def yen(amount):
-    return{
-        "rupiah" : amount * nilai_tukar["yen_to_rupiah"],
-        "dollar" : amount * nilai_tukar["yen_to_dollar"],
-        "ringgit" : amount * nilai_tukar["yen_to_ringgit"],
-        "poundsterling" : amount * nilai_tukar["yen_to_poundsterling"]
-    }
-
-def poundsterling(amount):
-    return{
-        "rupiah" : amount * nilai_tukar["poundsterling_to_rupiah"],
-        "dollar" : amount * nilai_tukar["poundsterling_to_dollar"],
-        "ringgit" : amount * nilai_tukar['poundsterling_to_ringgit'],
-        "yen" : amount * nilai_tukar["poundsterling_to_yen"]
-    }
-
-def ringgit(amount):
-    return{
-        "rupiah" : amount * nilai_tukar["ringgit_to_rupiah"],
-        "yen": amount* nilai_tukar["ringgit_to_yen"],
-        "poundsterling": amount * nilai_tukar["ringgit_to_poundsterling"],
-        "dollar" : amount * nilai_tukar["ringgit_to_dollar"]
-    }
-
-def currency_conversion():
-    print("konversi mata uang")
+def currency_convert(api_key,from_currency,to_currency):
+    url=f"https://v6.exchangerate-api.com/v6/{api_key}/latest/{from_currency}"
     
-    while True:
-        from_currency = input("masukan mata uang asal (rupiah/dollar/yen/poundsterling/ringgit) : ")
-        amount =  float(input(f"masukan jumlah uang dalam {from_currency} : "))
-        to_currency = input("masukan mata uang tujuan (rupiah/dollar/yen/poundsterling/ringgit) : ")
+    try:
+        # ! request dari api
+        res = requests.get(url)
+        res.raise_for_status() # ! akan memunculkan error jika terjadi gagal
         
-        if from_currency == "rupiah":
-            result = rupiah(amount)
-        elif from_currency == "dollar":
-            result = dollar(amount)
-        elif from_currency == "yen":
-            result= yen(amount)
-        elif from_currency == "poundsterling":
-            result = poundsterling(amount)
-        elif from_currency == "ringgit":
-            result = ringgit(amount)
+        # ! parsing data json dari response
+        
+        data =res.json()
+        
+        if "conversion_rates" in data and to_currency in data["conversion_rate"]:
+            exchange_rate = data["conversion_rate"][to_currency]
+            print(f"nilai tukar {from_currency} ke {to_currency} adalah {exchange_rate}")
+            return exchange_rate
         else:
-            print("mata uang tidak ada / tidak valid")
-            continue
+            print(f"mata uang {from_currency} tidak ditemukan")
+            return None
         
-        if to_currency in result:
-            print(f"{amount} {from_currency} = {result[to_currency]:.2f} {to_currency}")
+    except requests.exceptions.RequestException as e:
+        print(f"error : {e}")
+        return None
+
+while True:
+    try:
+        api_key = "ac4b392da76559bf767d4408"
+        from_currency = input("masukkan mata uang awal : ")
+        to_currency = input("masukkan mata uang tujuan : ")
+        rate = currency_convert(api_key,from_currency,to_currency)
+
+        if rate:
+            amount = input("masukan nilai nya : ")
+            convert_amount = amount * rate
+            print(f"{amount} {from_currency} = {convert_amount} {to_currency}")
         else:
-            print("mata uang tujuan tidak valid")
+            print("input tidak valid")
+    except KeyboardInterrupt:
+        print(f"proggram dihentikan dengan paksa")
         
-        continue_option = input("apakah masih ingin dilanjut : [y/n]").lower()
-        if continue_option == "n":
-            return
+        
+    continue_option = input("apakah kamu ingin melanjutkan ? :  [y]/[n]").upper()
+    if continue_option == "N":
+        break

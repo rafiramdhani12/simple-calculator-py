@@ -30,4 +30,4 @@ def derajat():
         if continue_choice.lower() == 'n':
             return
 
-derajat()
+
