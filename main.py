@@ -13,7 +13,7 @@ def main():
         elif option == 3:
             waktu()
         elif option == 4 :
-            currency_conversion()
+            currency_conversion()   
         else :
             print("opsi yg anda masukan tidak valid / tidak ada")
             continue

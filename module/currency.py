@@ -1,46 +1,35 @@
+import os 
 import requests
+from dotenv import load_dotenv
 
-def currency_convert(api_key,from_currency,to_currency):
-    url=f"https://v6.exchangerate-api.com/v6/{api_key}/latest/{from_currency}"
+# ! muat / memanggil variable lingkungan dari .env
+load_dotenv()
+
+def currency_conversion():
+    api_key = os.getenv("API_KEY")
+    if not api_key:
+        print("api key tidak ditemukan , pastikan disimpan di .env")
+        return
+    
+    from_currency = input("masukan mata uang asal (contoh USD) : ").upper()
+    to_currency = input("masukan mata uang tujuan (contoh IDR) : ").upper()
+    url = f"https://v6.exchangerate-api.com/v6/{api_key}/latest/{from_currency}"
     
     try:
-        # ! request dari api
+        
         res = requests.get(url)
-        res.raise_for_status() # ! akan memunculkan error jika terjadi gagal
+        res.raise_for_status()
+        data= res.json()
         
-        # ! parsing data json dari response
-        
-        data =res.json()
-        
-        if "conversion_rates" in data and to_currency in data["conversion_rate"]:
-            exchange_rate = data["conversion_rate"][to_currency]
-            print(f"nilai tukar {from_currency} ke {to_currency} adalah {exchange_rate}")
-            return exchange_rate
+        if "conversion_rates" in data and to_currency in data["conversion_rates"]:
+            exchange_rate = data["conversion_rates"][to_currency]
+            print(f"Kurva nilai tukar {from_currency} ke {to_currency} adalah {exchange_rate}")
+            
+            # ! lakukan konversi
+            amount = float(input("masukkan nilai yg ingin di konversi : "))
+            converted_amount = amount * exchange_rate
+            print(f"{amount} {from_currency} = {converted_amount:.2f} {to_currency}")
         else:
-            print(f"mata uang {from_currency} tidak ditemukan")
-            return None
-        
+            print("mata uang tujuan tidak ditemukan")
     except requests.exceptions.RequestException as e:
-        print(f"error : {e}")
-        return None
-
-while True:
-    try:
-        api_key = "ac4b392da76559bf767d4408"
-        from_currency = input("masukkan mata uang awal : ")
-        to_currency = input("masukkan mata uang tujuan : ")
-        rate = currency_convert(api_key,from_currency,to_currency)
-
-        if rate:
-            amount = input("masukan nilai nya : ")
-            convert_amount = amount * rate
-            print(f"{amount} {from_currency} = {convert_amount} {to_currency}")
-        else:
-            print("input tidak valid")
-    except KeyboardInterrupt:
-        print(f"proggram dihentikan dengan paksa")
-        
-        
-    continue_option = input("apakah kamu ingin melanjutkan ? :  [y]/[n]").upper()
-    if continue_option == "N":
-        break
+        print(f"Error: {e}")
