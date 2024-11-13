@@ -18,7 +18,7 @@ def main():
             print("opsi yg anda masukan tidak valid / tidak ada")
             continue
             
-        opsi_lanjut = input("kamu telah kembali ke halaman utama apakah kamu ingin melanjutkan ? [y/n]").lower()
+        opsi_lanjut = input("kamu telah kembali ke halaman utama apakah kamu ingin melanjutkan ? [y/n]").upper()
         
         if opsi_lanjut == "n":
             break
