@@ -1,0 +1,22 @@
+# Ignore environment files
+.env
+
+# Abaikan semua direktori ini
+/../../../AppData/
+/../../../Downloads/
+/../../../Desktop/
+/../../../Documents/
+/../../../Music/
+/../../../Videos/
+
+# Abaikan file tertentu
+*.exe
+*.zip
+*.ini
+*.dat
+*.regtrans-ms
+
+# Abaikan file cache sistem
+NTUSER.*
+desktop.ini
+Thumbs.db
