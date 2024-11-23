@@ -7,22 +7,20 @@ dengan menggunakan python kami kelompok 8 membuat proggram kalkulator sederhana
 
 ## Nama Kelompok
 
-| Nama                    | nim      | kelas    |
-| ----------------------  | -------- | -------- |
-| muhammad rafi ramdhani  | 15240411 | 15.1A.04 |
-| Maeyumedi Davi          | 15240975 | 15.1A.04 |
-| M.Akbar Ghozali         | 15240313 | 15.1A.04 |      
-| Jeremy Febrian Manuputty| 15240505 | 15.1A.04 |      
+| Nama                     | nim      | kelas    |
+| ------------------------ | -------- | -------- |
+| muhammad rafi ramdhani   | 15240411 | 15.1A.04 |
+| Maeyumedi Davi           | 15240975 | 15.1A.04 |
+| M.Akbar Ghozali          | 15240313 | 15.1A.04 |
+| Jeremy Febrian Manuputty | 15240505 | 15.1A.04 |
 
 ## 📸 Screenshot
 
-![Tampilan Proyek](screenshot.png)
+![Tampilan Proyek](./projek.png)
 
 ## 🚀 Fitur
 
-- 🔥 Sangat cepat
-- ⚡ Ramah pengguna
-- 🌍 Mendukung banyak bahasa
+- ⚡ mudah dimengerti karena masih menggunakan py native dan menggunakan sintaks yg mudah dibaca
 
 ## 🛠 Instalasi
 
