@@ -3,7 +3,7 @@
 ![Status](https://img.shields.io/badge/status-Act/ive-blue)
 
 ini adalah projek akhir semester tema sains (matematika)
-dengan menggunakan python kami kelompok 8 membuat proggram kalkulator sederhana
+dengan menggunakan python kami kelompok 8 membuat proggram kalkulator sederhana sekali
 
 ## Nama Kelompok
 
