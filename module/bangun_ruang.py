@@ -11,18 +11,18 @@ def tampilan():
     ''')
 
 def bangun_ruang():
+    clear()
     try:
-        clear()
         while True:
             
             tampilan()
             
             opsi = int(input("masukan opsi [1]/[2]/[3]/[4] : "))
             
+            clear()
             if opsi == 0:
                 print("anda telah keluar dari proggram")
                 break
-            
             if opsi == 1:
                 print("menghitung volume balok")
                 s = int(input("masukan panjang sisi kubus : "))
@@ -43,10 +43,10 @@ def bangun_ruang():
                 print("menghitung volume dan luas tabung")
                 r = float(input("masukkan jari-jari : "))
                 t = float(input("masukkan tinggi tabung : "))
-                V =3.14 * r ** 2 *t
+                V =3.14 * (r ** 2) *t
                 luas_permukaan = 2 * 3.14 * r * (r+t)
-                print(f"volume tabung : {V:.3f}")
-                print(f"luas permukaan : {luas_permukaan:.3f}")
+                print(f"volume tabung : {V:.2f}")
+                print(f"luas permukaan : {luas_permukaan:.2f}")
             elif opsi == 4:
                 print("menghitung volume dan luas permukaan kerucut")
                 r = float(input("jari-jari : "))
@@ -58,5 +58,6 @@ def bangun_ruang():
                 print(f"luas permukaan : {luas_permukaan:.3f}")
             else:
                 print("opsi tidak valid silahkan masukan opsi yg lain")
+
     except KeyboardInterrupt:
         print("anda telah keluar paksa dari proggram")
