@@ -15,13 +15,13 @@ def calculator():
 
         operasi = input("Pilih operasi: \n1. +  (penjumlahan)\n2. -  (pengurangan)\n3. *  (perkalian)\n4. /  (pembagian)\nMasukkan pilihan: ")
 
-        if operasi == "+":
+        if operasi == "+" or operasi == "1":
             result = angka1 + angka2
-        elif operasi == "-":
+        elif operasi == "-" or operasi == "2":
             result = angka1 - angka2
-        elif operasi == "*":
+        elif operasi == "*" or operasi == "3":
             result = angka1 * angka2
-        elif operasi == "/":
+        elif operasi == "/" or operasi == "4":
             if angka2 == 0:
                 print("Tidak dapat membagi dengan nol!")
                 input("Tekan Enter untuk melanjutkan...")
