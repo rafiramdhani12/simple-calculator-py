@@ -9,10 +9,11 @@ dengan menggunakan python kami kelompok 8 membuat proggram kalkulator sederhana 
 
 | Nama                     | nim      | kelas    |
 | ------------------------ | -------- | -------- |
-| muhammad rafi ramdhani   | 15240411 | 15.1A.04 |
+| Muhammad Rafi Ramdhani   | 15240411 | 15.1A.04 |
 | Maeyumedi Davi           | 15240975 | 15.1A.04 |
 | M.Akbar Ghozali          | 15240313 | 15.1A.04 |
 | Jeremy Febrian Manuputty | 15240505 | 15.1A.04 |
+| Arya Kurniawan           | 15240661 | 15.1A.04 |
 
 ## 📸 Screenshot
 
@@ -33,3 +34,10 @@ py main.py
 ## 📝 Notes
 
 - currency tidak akan bisa dipakai oleh orang luar karena itu menggunakan api
+
+⬜⬜⬛⬛⬛⬛  
+⬜⬜⬜⬛⬛⬛  
+⬜🔳⬜⬜🔳⬜  
+⬜⬜⬜⬜⬜⬜  
+⬜⬜⬛⬛⬜⬜  
+⬜⬜⬜⬜⬜⬜
