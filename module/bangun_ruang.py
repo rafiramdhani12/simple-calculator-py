@@ -1,4 +1,5 @@
 from module.clear import clear
+import math
 
 def tampilan():
     print(
@@ -48,14 +49,36 @@ def bangun_ruang():
                 print(f"volume tabung : {V:.2f}")
                 print(f"luas permukaan : {luas_permukaan:.2f}")
             elif opsi == 4:
-                print("menghitung volume dan luas permukaan kerucut")
-                r = float(input("jari-jari : "))
-                t = float(input("tinggi : "))
-                s = float(input(""))
-                V = (1/3) * 3.14 *r **2 *t
-                luas_permukaan = 3.14 * r* (r+s)
-                print(f"Volume kerucut : {V:.3f}")
-                print(f"luas permukaan : {luas_permukaan:.3f}")
+                print("Menghitung rumus kerucut")
+                print('''
+                        1.Volume kerucut
+                        2.Luas permukaan kerucut
+                        3.Tinggi kerucut
+                        ''')
+                pilihan = int(input("Bagian yang dicari [1]/[2]/[3]/[4] : "))
+
+                if pilihan == 1:
+                 r = float(input("jari-jari : "))
+                 t = float(input("tinggi : "))
+                 V = (1/3) * 3.14 *r **2 *t
+                 print(f"Volume kerucut : {V:.2f}")
+
+                elif pilihan == 2:
+                 r = float(input("jari-jari : "))
+                 s = float(input("Panjang garis pelukis : "))
+                 l = float(input("Luas permukaan : "))
+                 luas_permukaan = 3.14 * r* (r+s)
+                 print(f"luas permukaan : {luas_permukaan:.2f}")
+
+                elif pilihan == 3:
+                    r = float(input("Jari-jari : "))
+                    s = float(input("Panjang garis pelukis : "))
+                    h = math.sqrt (s**2 - r**2)
+                    print(f"Tinggi kerucut adalah {h}")
+                
+                else:
+                    print("Opsi yang anda masukan salah!")
+
             else:
                 print("opsi tidak valid silahkan masukan opsi yg lain")
 
