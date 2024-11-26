@@ -44,16 +44,43 @@ def bangun_ruang():
                 print(f"luas permukaan : {luas_permukaan}")
 
             elif opsi ==3:
-                print("menghitung volume dan luas tabung")
-                r = float(input("masukkan jari-jari : "))
-                t = float(input("masukkan tinggi tabung : "))
-                V =3.14 * (r ** 2) *t
-                luas_permukaan = 2 * 3.14 * r * (r+t)
-                print(f"volume tabung : {V:.2f}")
-                print(f"luas permukaan : {luas_permukaan:.2f}")
+                print("menghitung bangun ruang tabung")
+                print('''
+                    1.Volume tabung
+                    2.Luas permukaan tabung
+                    3.Tinggi tabung
+                    4.Jari-jari tabung
+                ''')
+                pilihan = int(input("Masukan pilihan [1]/[2]/[3]/[4] : "))
 
+                if pilihan == 1:
+                    r = float(input("masukkan jari-jari : "))
+                    t = float(input("masukkan tinggi tabung : "))
+                    V =3.14 * (r ** 2) *t
+                    print(f"volume tabung : {V:.2f}")
+
+                if pilihan == 2:
+                    r = float(input("masukkan jari-jari : "))
+                    t = float(input("masukkan tinggi tabung : "))
+                    luas_permukaan = 2 * 3.14 * r * (r+t)
+                    print(f"luas permukaan : {luas_permukaan:.2f}")
+
+                if pilihan == 3 :
+                    volume = int(input("Masukan Volume tabung :"))
+                    r = float(input("Masukan jari-jari : "))
+                    tinggi = volume / (3.14 * r**2)
+                    print(f"tinggi tabung : {tinggi:.2f} ")
+                
+                if pilihan == 4 :
+                    volume = int(input("Masukan Volume tabung : "))
+                    tinggi = float(input("Masukan tinggi tabung : "))
+                    r = math.sqrt (volume/(math.pi * tinggi))
+                    print(f"Jari-jari tabung : {r:.2f}")
+                
+                else:
+                    print("Input tidak sesuai!")
             elif opsi == 4:
-                print("Menghitung rumus kerucut")
+                print("Menghitung bangun ruang kerucut")
                 print('''
                         1.Volume kerucut
                         2.Luas permukaan kerucut
