@@ -18,7 +18,7 @@ def main():
                 |   -Pertambahan        -Kelvin           -Menit        -Dollar         -Balok            |
                 |   -Pembagian          -Fahrenheit       -Jam          -Yen            -Tabung           |
                 |   -Pengurangan        -Reamur                                         -Kerucut          |
-                |                                                                                         |
+                |                                                                       -Bola             |
                 |=========================================================================================|
                 ''')
                 option = int(input("Masukan opsi yang anda ingin lakukan, pilih opsi [1]/[2]/[3]/[4]/[5] : "))    

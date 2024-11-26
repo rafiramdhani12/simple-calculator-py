@@ -4,11 +4,11 @@ import math
 def tampilan():
     print(
     '''
-    -----------------------------------------------------------------
-    |                         Bangun ruang                          |
-    =================================================================
-    |   1.Kubus         2.Balok     3.Tabung        4.Kerucut       |
-    -----------------------------------------------------------------
+    ----------------------------------------------------------------------------
+    |                                 Bangun ruang                             |
+    ===========================================================================|
+    |   1.Kubus         2.Balok     3.Tabung        4.Kerucut       5.Bola     |
+    ----------------------------------------------------------------------------
     ''')
 
 def bangun_ruang():
@@ -18,7 +18,7 @@ def bangun_ruang():
             
             tampilan()
             
-            opsi = int(input("masukan opsi [1]/[2]/[3]/[4] : "))
+            opsi = int(input("masukan opsi [1]/[2]/[3]/[4]/[5] atau [0] untuk keluar: "))
             
             clear()
             if opsi == 0:
@@ -79,6 +79,7 @@ def bangun_ruang():
                 
                 else:
                     print("Input tidak sesuai!")
+                    
             elif opsi == 4:
                 print("Menghitung bangun ruang kerucut")
                 print('''
@@ -111,8 +112,34 @@ def bangun_ruang():
                 else:
                     print("Opsi yang anda masukan salah!")
 
-            else:
-                print("opsi tidak valid silahkan masukan ops i yg lain")
+            elif opsi == 5:
+                print("Menghitung bangun ruang Bola")
+                print('''
+                    1.Volume bola
+                    2.Luas permukaan bola          
+                ''')
+                choice =int(input("Masukan pilihan [1]/[2] : "))
+                
+                if choice == 1:
+                    r = float(input("Masukan jari-jari bola : "))
+                    volume = (4/3) * math.pi * r**3
+                    print(f"Volume bola adalah : {volume:.2f}")
 
+                if choice == 2:
+                    r = float(input("Masukan jari-jari bola : "))
+                    A = 4 * math.pi * (r**2)
+                    print(f"Luas permukaan bola adalah : {A:.2f}")
+                
+                else:
+                    print("opsi tidak valid silahkan masukan opsi yg lain")
+                
+            else:
+                print("opsi tidak valid silahkan masukan opsi yg lain")
+
+            lanjut = input("Apakah Anda ingin melanjutkan? (y/n): ").lower()
+            if lanjut != 'y':
+                print("Anda telah keluar dari program.")
+                break
+            
     except KeyboardInterrupt:
         print("anda telah keluar paksa dari proggram")
