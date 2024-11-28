@@ -5,6 +5,8 @@
 ini adalah projek akhir semester tema sains (matematika)
 dengan menggunakan python kami kelompok 8 membuat proggram kalkulator sederhana sekali
 
+kontol ayam enak
+
 ## Nama Kelompok
 
 | Nama                     | nim      | kelas    |
