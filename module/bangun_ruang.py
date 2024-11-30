@@ -59,19 +59,19 @@ def bangun_ruang():
                     V =3.14 * (r ** 2) *t
                     print(f"volume tabung : {V:.2f}")
 
-                if pilihan == 2:
+                elif pilihan == 2:
                     r = float(input("masukkan jari-jari : "))
                     t = float(input("masukkan tinggi tabung : "))
                     luas_permukaan = 2 * 3.14 * r * (r+t)
                     print(f"luas permukaan : {luas_permukaan:.2f}")
 
-                if pilihan == 3 :
+                elif pilihan == 3 :
                     volume = int(input("Masukan Volume tabung :"))
                     r = float(input("Masukan jari-jari : "))
                     tinggi = volume / (3.14 * r**2)
                     print(f"tinggi tabung : {tinggi:.2f} ")
                 
-                if pilihan == 4 :
+                elif pilihan == 4 :
                     volume = int(input("Masukan Volume tabung : "))
                     tinggi = float(input("Masukan tinggi tabung : "))
                     r = math.sqrt (volume/(math.pi * tinggi))
@@ -107,7 +107,7 @@ def bangun_ruang():
                     s = float(input("Panjang garis pelukis : "))
                     h = math.sqrt (s**2 - r**2)
                     # math.sqrt berfungsi sebagai akar kuadrat dari module math
-                    print(f"Tinggi kerucut adalah {h}")
+                    print(f"Tinggi kerucut adalah {h:.2f}")
                 
                 else:
                     print("Opsi yang anda masukan salah!")
@@ -137,7 +137,7 @@ def bangun_ruang():
                 print("opsi tidak valid silahkan masukan opsi yg lain")
 
             lanjut = input("Apakah Anda ingin melanjutkan? (y/n): ").lower()
-            if lanjut != 'y':
+            if lanjut == 'n':
                 print("Anda telah keluar dari program.")
                 break
             
