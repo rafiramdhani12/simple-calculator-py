@@ -17,7 +17,7 @@ kalkulator sederhana sekali
 
 ## 📸 Screenshot
 
-![tampilan proyek](./projek.png)
+![tampilan proyek](/projek.jpg)
 
 ## 🚀 Fitur
 
