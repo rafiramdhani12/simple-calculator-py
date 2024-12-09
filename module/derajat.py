@@ -8,29 +8,29 @@ konversi = {
 from module.clear import clear
 
 def derajat():
-    print("Konversi Suhu")
-    
-    try:
-            while True:
-                clear()
-                data_input = input('Pilih suhu yang ingin dikonversi \n1. Celcius \n2. Fahrenheit \n3. Kelvin \n4. Reamur \nPilih salah satu: [1]/[2]/[3]/[4] :')
+    while True:
+        try:
+            clear()
+            print("Konversi Suhu")
+            data_input = input('Pilih suhu yang ingin dikonversi \n1. Celcius \n2. Fahrenheit \n3. Kelvin \n4. Reamur \nPilih salah satu: [1]/[2]/[3]/[4] :')
             
-                if data_input in konversi:
+            if data_input in konversi:
                     suhu , fungsi_konversi = list(konversi[data_input].items())[0]
                     nilai_suhu = float(input(f"masukan suhu dalam {suhu} : "))
                     hasil = fungsi_konversi(nilai_suhu)
                     
                     for satuan, nilai in hasil.items():
                         print(f"{suhu} => {satuan} = {nilai}")
-                else:
+            else:
                     print("Pilihan tidak valid.")
                     continue
-    except KeyboardInterrupt:
+        except KeyboardInterrupt:
             print("proggram dihentikan secara paksa")
 
         
-    continue_choice = input("\nApakah Anda ingin melakukan konversi lagi? (y/n): ")
-    if continue_choice.lower() == 'n':
-        return
+        continue_choice = input("\nApakah Anda ingin melakukan konversi lagi? (y/n): ")
+        if continue_choice.lower() == 'n':
+            break
+    
 
 

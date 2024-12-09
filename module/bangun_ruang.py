@@ -1,6 +1,5 @@
 from module.clear import clear
 from utils.bangun_ruang import *
-import math
 
 def tampilan():
     print(
@@ -25,22 +24,19 @@ def bangun_ruang():
             if opsi == 0:
                 print("anda telah keluar dari proggram")
                 break
-
-            if opsi == 1:
-               kubus()
-
-            elif opsi == 2:
-                balok()
-
-            elif opsi ==3:
-               tabung()
+            
+            match opsi:
+                case 1:
+                    kubus()
+                case 2:
+                    balok()
+                case 3:
+                    tabung()
+                case 4:
+                    kerucut()
+                case 5:
+                    bola()
                     
-            elif opsi == 4:
-               kerucut()
-
-            elif opsi == 5:
-                bola()
-
             lanjut = input("Apakah Anda ingin melanjutkan? (Y/N): ").upepr()
             if lanjut == 'N':
                 print("Anda telah keluar dari program.")
