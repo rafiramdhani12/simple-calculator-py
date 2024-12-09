@@ -22,9 +22,9 @@ def waktu():
         clear()
         try:
             tampilan()
-            data_input = input('pilih opsi [1]/[2]/[3] :')
+            data_input = input('pilih opsi [1]/[2]/[3] : ')
 
-            if data_input in konversi:
+            if data_input in konversi: #! memeriksa apakah ada apakah data_input ada di konversi 
                 satuan_waktu, fungsi_konversi = list(konversi[data_input].items())[0]
                 nilai_waktu = float(input(f"Masukkan waktu dalam {satuan_waktu}: "))
                 hasil = fungsi_konversi(nilai_waktu)
