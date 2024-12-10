@@ -33,7 +33,36 @@ py main.py
 
 ## 📝 Notes
 
-- currency tidak akan bisa dipakai oleh orang luar karena itu menggunakan api
+- currency tidak akan bisa dipakai oleh orang lain karena itu menggunakan api dan api key nya milik creator
+- jika kalian tetap ingin mencoba silahkan kalian kunjungi web v6.exchangerate-api.com untuk membuat api key
+- berikut adalah cara menggunakanya
+
+  ```bash
+  pip install python-dotenv requests
+  setelah itu lakukan seperti ini
+  import requests
+  from dotenv import load_dotenv
+  from module.clear import clear
+  import os
+
+  # ! muat / memanggil variable lingkungan dari .env
+  load_dotenv()
+
+  def currency_conversion():
+    clear()
+    api_key = os.getenv("API_KEY")
+    if not api_key:
+        print("api key tidak ditemukan , pastikan disimpan di .env")
+        return
+    try:
+        while True:
+            from_currency = input("masukan mata uang asal (contoh USD) : ").upper()
+            to_currency = input("masukan mata uang tujuan (contoh IDR) : ").upper()
+            url = f"https://v6.exchangerate-api.com/v6/{api_key}/latest/{from_currency}"
+            
+
+
+  ```
 
 ⬜⬜⬛⬛⬛⬛  
 ⬜⬜⬜⬛⬛⬛  
