@@ -13,7 +13,7 @@ def calculator():
             input("Tekan Enter untuk melanjutkan...")
             continue
 
-        operasi = input("Pilih operasi: \n1. +  (penjumlahan)\n2. -  (pengurangan)\n3. *  (perkalian)\n4. /  (pembagian)\nMasukkan pilihan: ")
+        operasi = int(input("Pilih operasi: \n1. +  (penjumlahan)\n2. -  (pengurangan)\n3. *  (perkalian)\n4. /  (pembagian)\nMasukkan pilihan: "))
         
         match operasi:
             case 1:

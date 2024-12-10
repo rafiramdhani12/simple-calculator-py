@@ -21,21 +21,21 @@ def main():
                 |                                                                       -Bola             |
                 |=========================================================================================|
                 ''')
-                option = int(input("Masukan opsi yang anda ingin lakukan, pilih opsi [1]/[2]/[3]/[4]/[5] : "))    
-                if option == 1 :
-                    calculator()
-                elif option == 2 :
-                    derajat()
-                elif option == 3:
-                    waktu()
-                elif option == 4 :
-                    currency_conversion()
-                elif option == 5 :
-                    bangun_ruang()   
-                else :
-                    print("opsi yg anda masukan tidak valid / tidak ada")
-                    continue
-                    
+                option = int(input("Masukan opsi yang anda ingin lakukan, pilih opsi [1]/[2]/[3]/[4]/[5] : ")) 
+                match option:
+                    case 1:
+                        calculator()
+                    case 2:
+                        derajat()
+                    case 3:
+                        waktu()
+                    case 4:
+                        currency_conversion()
+                    case 5:
+                        bangun_ruang()   
+                    case _:
+                        print("opsi yg anda masukkan tidak valid / tidak ada")
+                        continue        
                 opsi_lanjut = input("kamu telah kembali ke halaman utama apakah kamu ingin melanjutkan ? [y/n]")
                 
                 if opsi_lanjut == "n":
