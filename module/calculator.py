@@ -14,23 +14,25 @@ def calculator():
             continue
 
         operasi = input("Pilih operasi: \n1. +  (penjumlahan)\n2. -  (pengurangan)\n3. *  (perkalian)\n4. /  (pembagian)\nMasukkan pilihan: ")
-
-        if operasi == "+" or operasi == "1":
-            result = angka1 + angka2
-        elif operasi == "-" or operasi == "2":
-            result = angka1 - angka2
-        elif operasi == "*" or operasi == "3":
-            result = angka1 * angka2
-        elif operasi == "/" or operasi == "4":
-            if angka2 == 0:
-                print("Tidak dapat membagi dengan nol!")
+        
+        match operasi:
+            case 1:
+                result = angka1 + angka2
+            case 2:
+                result = angka1 - angka2
+            case 3:
+                result = angka1 * angka2
+            case 4:
+                result = angka1 / angka2
+                if angka2 == 0:
+                    print("tidak dapat membagi dengan nol")
+                    print("tekan enter untuk melanjutkan")
+                    continue
+            case _:
+                print("operasi tidak valid")
                 input("Tekan Enter untuk melanjutkan...")
                 continue
-            result = angka1 / angka2
-        else:
-            print("Operasi tidak valid.")
-            input("Tekan Enter untuk melanjutkan...")
-            continue
+                
 
         print(f"Hasil: {result}")
 
