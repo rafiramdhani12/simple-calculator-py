@@ -6,12 +6,15 @@ konversi = {
 }
 
 from module.clear import clear
+from utils.interface import temperature_interface
 
 def derajat():
     while True:
         try:
             clear()
             print("Konversi Suhu")
+            
+            temperature_interface()
             data_input = input('Pilih suhu yang ingin dikonversi \n1. Celcius \n2. Fahrenheit \n3. Kelvin \n4. Reamur \nPilih salah satu: [1]/[2]/[3]/[4] :')
             
             if data_input in konversi:
@@ -24,13 +27,15 @@ def derajat():
             else:
                     print("Pilihan tidak valid.")
                     continue
+    
         except KeyboardInterrupt:
             print("proggram dihentikan secara paksa")
+            
+            continue_choice = input("\nApakah Anda ingin melakukan konversi lagi? (Y/N): ").upper()
+            if continue_choice == "N":
+                    break
 
-        
-        continue_choice = input("\nApakah Anda ingin melakukan konversi lagi? (Y/N): ").upper()
-        if continue_choice.lower() == "N":
-            break
+      
     
 
 

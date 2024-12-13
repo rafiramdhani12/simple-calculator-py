@@ -26,7 +26,7 @@ def main():
                     case _:
                         print("opsi yg anda masukkan tidak valid / tidak ada")
                         continue        
-                opsi_lanjut = input("kamu telah kembali ke halaman utama apakah kamu ingin melanjutkan ? [y/n]")
+                opsi_lanjut = input("kamu telah kembali ke halaman utama apakah kamu ingin melanjutkan ? [Y/N]")
                 
                 if opsi_lanjut == "n":
                     break
