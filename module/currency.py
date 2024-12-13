@@ -34,7 +34,7 @@ def currency_conversion():
                 else:
                     print("mata uang tujuan tidak ditemukan")
                 
-                opsi = input("apakah anda ingin melanjutkan ? [y/n]")
+                opsi = input("apakah anda ingin melanjutkan ? [y/n] : ").upper()
 
                 if opsi == "n":
                     break

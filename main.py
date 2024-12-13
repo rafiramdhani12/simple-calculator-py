@@ -4,23 +4,13 @@ from module.currency import currency_conversion
 from module.waktu import waktu
 from module.bangun_ruang import bangun_ruang
 from module.clear import clear
+from utils.interface import main_interface
 
 def main():
     try:
         while True:
                 clear()
-                print('''
-                |=========================================================================================|
-                |   1. Calculator       2.Suhu            3.Waktu       4.Mata uang     5.Bangun ruang    |
-                |-----------------------------------------------------------------------------------------|
-                |                                                                                         |
-                |   -Perkalian          -Celcius          -Detik        -Rupiah         -Kubus            |
-                |   -Pertambahan        -Kelvin           -Menit        -Dollar         -Balok            |
-                |   -Pembagian          -Fahrenheit       -Jam          -Yen            -Tabung           |
-                |   -Pengurangan        -Reamur                                         -Kerucut          |
-                |                                                                       -Bola             |
-                |=========================================================================================|
-                ''')
+                main_interface()
                 option = int(input("Masukan opsi yang anda ingin lakukan, pilih opsi [1]/[2]/[3]/[4]/[5] : ")) 
                 match option:
                     case 1:

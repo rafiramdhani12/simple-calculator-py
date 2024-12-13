@@ -1,22 +1,13 @@
 from module.clear import clear
 from utils.bangun_ruang import *
-
-def tampilan():
-    print(
-    '''
-    ----------------------------------------------------------------------------
-    |                                 Bangun ruang                             |
-    ===========================================================================|
-    |   1.Kubus         2.Balok     3.Tabung        4.Kerucut       5.Bola     |
-    ----------------------------------------------------------------------------
-    ''')
+from utils.interface import geometry_interface
 
 def bangun_ruang():
     clear()
     try:
         while True:
             
-            tampilan()
+            geometry_interface()
             
             opsi = int(input("masukan opsi [1]/[2]/[3]/[4]/[5] atau [0] untuk keluar: "))
             
@@ -37,7 +28,7 @@ def bangun_ruang():
                 case 5:
                     bola()
                     
-            lanjut = input("Apakah Anda ingin melanjutkan? (Y/N): ").upepr()
+            lanjut = input("Apakah Anda ingin melanjutkan? (Y/N): ").upper()
             if lanjut == 'N':
                 print("Anda telah keluar dari program.")
                 break

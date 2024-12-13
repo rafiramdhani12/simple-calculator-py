@@ -69,8 +69,8 @@ def calculator():
                 print("Input tidak valid. Masukkan 'y' atau 'n'.")
                 continue
         
-        opsi = input("Apakah ingin menghitung lagi? [y/n]: ").lower()
-        if opsi == "n":
+        opsi = input("Apakah ingin menghitung lagi? [Y/N]: ").upper()
+        if opsi == "N":
             print("Terima kasih telah menggunakan kalkulator!")
             break
 

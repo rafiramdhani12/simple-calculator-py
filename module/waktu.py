@@ -5,23 +5,15 @@ konversi = {
 }
 
 from module.clear import clear
-def tampilan():
-    print(
-        '''
-        -------------------------------------
-        |           Konversi Waktu          |
-        |===================================|
-        |   1.Detik     2.Menit     3.Jam   |   
-        -------------------------------------   
-        '''
-    )
+from utils.interface import time_interface
+  
 def waktu():
     print("Konversi Waktu")
 
     while True:
         clear()
         try:
-            tampilan()
+            time_interface()
             data_input = input('pilih opsi [1]/[2]/[3] : ')
 
             if data_input in konversi: #! memeriksa apakah ada apakah data_input ada di konversi 
@@ -38,8 +30,8 @@ def waktu():
             print("proggram dimatikan secara paksa")
             
             
-        pilihan_lanjut = input("Apakah Anda ingin melanjutkan? [y/n] ").lower()
-        if pilihan_lanjut == "n":
-            return
+        pilihan_lanjut = input("Apakah Anda ingin melanjutkan? [Y/N] ").upper()
+        if pilihan_lanjut == "N":
+            break
 
 

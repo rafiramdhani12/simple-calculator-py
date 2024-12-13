@@ -28,8 +28,8 @@ def derajat():
             print("proggram dihentikan secara paksa")
 
         
-        continue_choice = input("\nApakah Anda ingin melakukan konversi lagi? (y/n): ")
-        if continue_choice.lower() == 'n':
+        continue_choice = input("\nApakah Anda ingin melakukan konversi lagi? (Y/N): ").upper()
+        if continue_choice.lower() == "N":
             break
     
 
