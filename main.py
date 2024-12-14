@@ -1,10 +1,12 @@
-from module.calculator import calculator
+from module.calculator import Calculator
 from module.derajat import derajat
 from module.currency import currency_conversion
 from module.waktu import waktu
 from module.bangun_ruang import bangun_ruang
 from module.clear import clear
 from utils.interface import main_interface
+
+calculator = Calculator()
 
 def main():
     try:
@@ -14,7 +16,7 @@ def main():
                 option = int(input("Masukan opsi yang anda ingin lakukan, pilih opsi [1]/[2]/[3]/[4]/[5] : ")) 
                 match option:
                     case 1:
-                        calculator()
+                        calculator.run()
                     case 2:
                         derajat()
                     case 3:

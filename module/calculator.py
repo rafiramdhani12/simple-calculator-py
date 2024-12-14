@@ -1,81 +1,104 @@
 from module.clear import clear
 
-def calculator():
-    while True:
-        try:
-            clear()
-            print("=== KALKULATOR ===")
-            
+class Calculator:
+    def __init__(self):
+        self.result = 0
+
+    def clear_screen(self):
+        clear()
+
+    def get_number(self, prompt):
+        while True:
             try:
-                angka1 = float(input("Masukkan angka pertama: "))
-                angka2 = float(input("Masukkan angka kedua: "))
+                return float(input(prompt))
             except ValueError:
                 print("Input harus berupa angka!")
+
+    def get_operation(self):
+        while True:
+            try:
+                operasi = int(input("Pilih operasi: \n1. +  (penjumlahan)\n2. -  (pengurangan)\n3. *  (perkalian)\n4. /  (pembagian)\nMasukkan pilihan: "))
+                if operasi in [1, 2, 3, 4]:
+                    return operasi
+                else:
+                    print("Operasi tidak valid.")
+            except ValueError:
+                print("Input harus berupa angka!")
+
+    def perform_operation(self, operasi, angka1, angka2):
+        try:
+            match operasi:
+                case 1:
+                    return angka1 + angka2
+                case 2:
+                    return angka1 - angka2
+                case 3:
+                    return angka1 * angka2
+                case 4:
+                    if angka2 == 0:
+                        print("Tidak dapat membagi dengan nol!")
+                        return None
+                    return angka1 / angka2
+        except Exception as e:
+            print(f"Terjadi kesalahan: {e}")
+            return None
+
+    def continue_with_result(self):
+        while True:
+            lanjut = input("Apakah ingin melanjutkan operasi dengan hasil ini? [y/n]: ").lower()
+            if lanjut == "n":
+                return False
+            elif lanjut == "y":
+                try:
+                    operasi_lanjutan = input("Masukkan operasi (+, -, *, /): ")
+                    angka_baru = self.get_number("Masukkan angka: ")
+
+                    if operasi_lanjutan == "+":
+                        self.result += angka_baru
+                    elif operasi_lanjutan == "-":
+                        self.result -= angka_baru
+                    elif operasi_lanjutan == "*":
+                        self.result *= angka_baru
+                    elif operasi_lanjutan == "/":
+                        if angka_baru == 0:
+                            print("Tidak dapat membagi dengan nol!")
+                            continue
+                        self.result /= angka_baru
+                    else:
+                        print("Operasi tidak valid.")
+                        continue
+
+                    print(f"Hasil sementara: {self.result}")
+                except ValueError:
+                    print("Input harus berupa angka!")
+                    continue
+            else:
+                print("Input tidak valid. Masukkan 'y' atau 'n'.")
+                continue
+
+    def run(self):
+        while True:
+            self.clear_screen()
+            print("=== KALKULATOR ===")
+
+            angka1 = self.get_number("Masukkan angka pertama: ")
+            angka2 = self.get_number("Masukkan angka kedua: ")
+            operasi = self.get_operation()
+
+            result = self.perform_operation(operasi, angka1, angka2)
+            if result is None:
                 input("Tekan Enter untuk melanjutkan...")
                 continue
 
-            operasi = int(input("Pilih operasi: \n1. +  (penjumlahan)\n2. -  (pengurangan)\n3. *  (perkalian)\n4. /  (pembagian)\nMasukkan pilihan: "))
-            
-            match operasi:
-                case 1:
-                    result = angka1 + angka2
-                case 2:
-                    result = angka1 - angka2
-                case 3:
-                    result = angka1 * angka2
-                case 4:
-                    result = angka1 / angka2
-                    if angka2 == 0:
-                        print("tidak dapat membagi dengan nol")
-                        print("tekan enter untuk melanjutkan")
-                        continue
-                case _:
-                    print("operasi tidak valid")
-                    input("Tekan Enter untuk melanjutkan...")
-                    continue
-                    
+            self.result = result
+            print(f"Hasil: {self.result}")
 
-            print(f"Hasil: {result}")
+            if not self.continue_with_result():
+                break
 
-            # Lanjutkan operasi dengan hasil sementara
-            while True:
-                lanjut = input("Apakah ingin melanjutkan operasi dengan hasil ini? [y/n]: ") 
-                if lanjut == "n":
-                    break
-                elif lanjut == "y":
-                    try:
-                        operasi_lanjutan = input("Masukkan operasi (+, -, *, /): ")
-                        angka_baru = float(input("Masukkan angka: "))
-                        
-                        if operasi_lanjutan == "+":
-                            result += angka_baru
-                        elif operasi_lanjutan == "-":
-                            result -= angka_baru
-                        elif operasi_lanjutan == "*":
-                            result *= angka_baru
-                        elif operasi_lanjutan == "/":
-                            if angka_baru == 0:
-                                print("Tidak dapat membagi dengan nol!")
-                                continue
-                            result /= angka_baru
-                        else:
-                            print("Operasi tidak valid.")
-                            continue
-                        
-                        print(f"Hasil sementara: {result}")
-                    except ValueError:
-                        print("Input harus berupa angka!")
-                        continue
-                else:
-                    print("Input tidak valid. Masukkan 'y' atau 'n'.")
-                    continue
-                
-        except KeyboardInterrupt:
-            print("\nkeluar dari proggram secara paksa")
-        
-        
-        opsi = input("Apakah ingin menghitung lagi? [Y/N]: ").upper()
-        if opsi == "N":
-            print("Terima kasih telah menggunakan kalkulator!")
-            break
+            opsi = input("Apakah ingin menghitung lagi? [Y/N]: ").upper()
+            if opsi == "N":
+                print("Terima kasih telah menggunakan kalkulator!")
+                break
+
 
