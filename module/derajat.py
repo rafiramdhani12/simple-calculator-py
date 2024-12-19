@@ -17,6 +17,7 @@ def derajat():
             temperature_interface()
             data_input = input('Pilih suhu yang ingin dikonversi \n1. Celcius \n2. Fahrenheit \n3. Kelvin \n4. Reamur \nPilih salah satu: [1]/[2]/[3]/[4] :')
             
+            # ! untuk mengecek apakah data input ada di konveri ada / tidak
             if data_input in konversi:
                     suhu , fungsi_konversi = list(konversi[data_input].items())[0]
                     nilai_suhu = float(input(f"masukan suhu dalam {suhu} : "))
@@ -35,7 +36,5 @@ def derajat():
             if continue_choice == "N":
                     break
 
-      
-    
 
 
