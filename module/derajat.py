@@ -3,7 +3,7 @@ konversi = {
     "2" : {"fahrenheit": lambda x : {"celcius" : (x - 32) * 5/9 , "kelvin" : (x - 32 ) * 5/9 + 273.15 , "reamur" : (x - 32) * 4/5 }},
     "3" : {"kelvin": lambda x : {"celcius" : x - 273.15 , "fahrenheit" : (x - 273.15) * 5/9 + 32 , "reamur" :(x - 273.15) * 4/5  }},
     "4" : {"reamur": lambda x : {"celcius" : x * 5/4 , "kelvin" : (x * 5/4) + 273.15 , "fahrenheit" : (x * 5/4) + 32}},
-}
+} 
 
 from module.clear import clear
 from utils.interface import temperature_interface

@@ -1,6 +1,6 @@
 from module.clear import clear
 
-def calculator():
+def calculator()->int:
     while True:
         try:
             clear()
@@ -44,7 +44,7 @@ def calculator():
                     break
                 elif lanjut == "y":
                     try:
-                        operasi_lanjutan = input("Masukkan operasi (+, -, *, /): ")
+                        operasi_lanjutan = int(input("Masukkan operasi (+, -, *, /): "))
                         angka_baru = float(input("Masukkan angka: "))
                         
                         match operasi_lanjutan:

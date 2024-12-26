@@ -10,6 +10,8 @@ load_dotenv()
 def currency_conversion():
     clear()
     api_key = os.getenv("API_KEY")
+    
+    # ! jika tidak ada api key nya maka akan error
     if not api_key:
         print("api key tidak ditemukan , pastikan disimpan di .env")
         return
@@ -26,6 +28,7 @@ def currency_conversion():
                     res.raise_for_status()
                     data= res.json()
                     
+                    # ! melakukan pencarian di api jika ada maka lakukan perintah dibawah
                     if "conversion_rates" in data and to_currency in data["conversion_rates"]:
                         exchange_rate = data["conversion_rates"][to_currency]
                         print(f"Kurva nilai tukar {from_currency} ke {to_currency} adalah {exchange_rate}")
