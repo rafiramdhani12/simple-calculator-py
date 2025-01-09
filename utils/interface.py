@@ -1,15 +1,15 @@
 def main_interface() -> str:
       print('''
-                |=========================================================================================|
-                |   1. Calculator       2.Suhu            3.Waktu       4.Mata uang     5.Bangun ruang    |
-                |-----------------------------------------------------------------------------------------|
-                |                                                                                         |
-                |   -Perkalian          -Celcius          -Detik        -Rupiah         -Kubus            |
-                |   -Pertambahan        -Kelvin           -Menit        -Dollar         -Balok            |
-                |   -Pembagian          -Fahrenheit       -Jam          -Yen            -Tabung           |
-                |   -Pengurangan        -Reamur                                         -Kerucut          |
-                |                                                                       -Bola             |
-                |=========================================================================================|
+                |======================================================================================================|
+                |   1. Calculator       2.Suhu            3.Waktu       4.Mata uang     5.Bangun ruang  6.Age Counter  |
+                |------------------------------------------------------------------------------------------------------|
+                |                                                                                                      |
+                |   -Perkalian          -Celcius          -Detik        -Rupiah         -Kubus      -menghitung usia   |
+                |   -Pertambahan        -Kelvin           -Menit        -Dollar         -Balok                         |
+                |   -Pembagian          -Fahrenheit       -Jam          -Yen            -Tabung                        |
+                |   -Pengurangan        -Reamur                                         -Kerucut                       |
+                |                                                                       -Bola                          |
+                |======================================================================================================|
                 ''')
 
 def time_interface() -> str:

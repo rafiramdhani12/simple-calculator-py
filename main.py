@@ -5,13 +5,15 @@ from module.waktu import waktu
 from module.bangun_ruang import bangun_ruang
 from module.clear import clear
 from utils.interface import main_interface
+from module.age_counter import age_counter
+
 
 def main():
     try:
         while True:
                 clear()
                 main_interface()
-                option = int(input("Masukan opsi yang anda ingin lakukan, pilih opsi [1]/[2]/[3]/[4]/[5] : ")) 
+                option = int(input("Masukan opsi yang anda ingin lakukan, pilih opsi [1]/[2]/[3]/[4]/[5]/[6] : ")) 
                 match option:
                     case 1:
                         calculator()
@@ -22,7 +24,9 @@ def main():
                     case 4:
                         currency_conversion()
                     case 5:
-                        bangun_ruang()   
+                        bangun_ruang()
+                    case 6:
+                        age_counter()
                     case _:
                         print("opsi yg anda masukkan tidak valid / tidak ada")
                         continue        

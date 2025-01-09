@@ -7,7 +7,7 @@ import os
 # ! muat / memanggil variable lingkungan dari .env
 load_dotenv()
 
-def currency_conversion():
+def currency_conversion()->float:
     clear()
     api_key = os.getenv("API_KEY")
     
