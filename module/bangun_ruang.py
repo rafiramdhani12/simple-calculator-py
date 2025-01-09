@@ -10,7 +10,7 @@ def bangun_ruang():
             geometry_interface()
             
             try:
-                opsi = int(input("masukan opsi [1]/[2]/[3]/[4]/[5] atau ENTER untuk keluar: "))
+                opsi = int(input("masukan opsi [1]/[2]/[3]/[4] atau [0] untuk keluar: "))
             
                 clear()
                 
@@ -22,11 +22,11 @@ def bangun_ruang():
                     case 3:
                         tabung()
                     case 4:
-                        kerucut()
-                    case 5:
                         bola()
-                    case _:
+                    case 0:
                         break
+                    case _:
+                        print("opsi tidak ada silahkan masukan nomor yg ada")
             except ValueError:
                 break
             

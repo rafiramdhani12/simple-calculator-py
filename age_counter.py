@@ -40,7 +40,7 @@ def age_counter():
         except KeyboardInterrupt:
             print("\nanda telah keluar paksa dari program")
         
-        option = input("apakah anda ingin melanjutkan ? [Y?N]").upper()
+        option = input("apakah anda ingin melanjutkan ? [Y/N]").upper()
         if option == "N":
             break
         

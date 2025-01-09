@@ -55,32 +55,6 @@ def tabung():
     except ValueError:
         print("Input tidak valid. Masukkan angka.")
 
-def kerucut():
-    print("Menghitung Bangun Ruang Kerucut")
-    print('1. Volume Kerucut \n2. Luas Permukaan Kerucut \n3. Tinggi Kerucut')
-    try:
-        option = int(input("Masukkan pilihan [1]/[2]/[3]: "))
-        
-        match option :
-            case 1 :
-                radius = float(input("Masukkan jari-jari: "))
-                tinggi = float(input("Masukkan tinggi: "))
-                volume = (1/3) * math.pi * (radius ** 2) * tinggi
-                print(f"Volume kerucut: {volume:.2f}")
-            case 2 :
-                radius = float(input("Masukkan jari-jari: "))
-                garis_pelukis = float(input("Masukkan panjang garis pelukis: "))
-                luas_permukaan = math.pi * radius * (radius + garis_pelukis)
-                print(f"Luas permukaan kerucut: {luas_permukaan:.2f}")
-            case 3 :
-                radius = float(input("Masukkan jari-jari: "))
-                garis_pelukis = float(input("Masukkan panjang garis pelukis: "))
-                tinggi = math.sqrt(garis_pelukis**2 - radius**2)
-                print(f"Tinggi kerucut: {tinggi:.2f}")
-            case _:
-                print("pilihan tidak valid")
-    except ValueError:
-        print("Input tidak valid. Masukkan angka.")
 
 def bola():
     print("Menghitung Bangun Ruang Bola")

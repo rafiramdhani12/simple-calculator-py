@@ -1,5 +1,6 @@
 from module.clear import clear
 
+
 def calculator()->int:
     while True:
         try:
